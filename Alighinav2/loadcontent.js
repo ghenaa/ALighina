@@ -22,8 +22,29 @@ document.addEventListener('keydown', function (e) {
         e.preventDefault();
     }
 });
-function submitRSVP(response) {
-            alert(`Thank you! Your response: "${response}" has been recorded.`);
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+// RSVP button functionality
+function addRSVPListeners() {
+    document.querySelectorAll('.rsvp-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const response = button.textContent.trim();
+            const guestName = prompt('Please enter your name:');
+            if (guestName) {
+                saveToCSV(guestName, response);
+                alert(`Thank you, ${guestName}! Your response: "${response}" has been recorded.`);
+            }
+        });
+    });
+}
+
+// Save RSVP data to CSV
+function saveToCSV(name, response) {
+    const csvContent = `Name,Response\n${name},${response}\n`;
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'RSVP_responses.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
