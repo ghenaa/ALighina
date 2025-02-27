@@ -26,7 +26,7 @@ document.addEventListener('keydown', function (e) {
 
 // Function to submit RSVP response to Google Sheets
 function submitRSVP(attendance) {
-    const googleSheetURL = 'PASTE_YOUR_WEB_APP_URL_HERE'; // Replace with your deployed Web App URL
+    const googleSheetURL = 'https://script.google.com/macros/s/AKfycbzEmGmKbKbaM6hPZdCih0m0Lsp0LRBAx6XhSUWvahleBt4dPv62OlhUIYdNXjL3Pf4iXg/exec'; // Replace with your deployed Web App URL
 
     fetch(googleSheetURL, {
         method: 'POST',
