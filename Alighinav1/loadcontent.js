@@ -22,3 +22,11 @@ document.addEventListener('keydown', function (e) {
         e.preventDefault();
     }
 });
+// RSVP button functionality
+function addRSVPListeners() {
+    document.querySelectorAll('.rsvp-button').forEach(button => {
+        button.addEventListener('click', () => {
+            alert(`Thank you! Your response: "${button.textContent}" has been recorded.`);
+        });
+    });
+}
