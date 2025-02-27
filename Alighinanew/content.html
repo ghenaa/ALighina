@@ -187,9 +187,20 @@
 		
 		<p class="subtitle"><br>نوماً هنيئاً لأطفالكم</p>
 		<p class="subtitle">(1)عدد الاشخاص</p>
+	       <!-- RSVP Section -->
+    <div class="rsvp-section">
+        <h2 class="subtitle">Will you be attending?</h2>
+        <button class="rsvp-button" onclick="submitRSVP('Yes')">Yes, I will attend</button>
+        <button class="rsvp-button" onclick="submitRSVP('No')">Sorry, I can't make it</button>
+    </div>
+
+    
     </div>
 
     <script>
+	    function submitRSVP(response) {
+            alert(`Thank you! Your response: "${response}" has been recorded.`);
+        }
         function updateCountdown() {
             const weddingDate = new Date("June 10, 2025 00:00:00").getTime();
             const now = new Date().getTime();
