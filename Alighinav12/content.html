@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
+        
+        body {
+			font-family: 'Playfair Display', serif;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+}
+
+.container {
+    max-width: 90%;
+    width: 600px;
+    margin: auto;
+    background: url(https://i.imgur.com/D6IU4MO.png);
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin-top: 50px;
+    border: 8px solid #a586a6;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+
+    /* Ensures the image fully fits the container */
+    background-size: 100% 100%; /* Stretches the image to fit */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+        margin-top: 30px;
+    }
+}
+
+
+/* Adjust for even smaller screens */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        border-width: 5px;
+    }
+}
+
+
+
+
+        .decorative {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            color: #412649;
+            animation: slideIn 2s ease-in-out;
+        }
+        .subtitle {
+
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    margin-bottom: -10px; /* Reduce bottom margin */
+   /* Moves it up */
+    animation: fadeIn 3s ease-in-out;
+    color: #412649;
+	transform: translateY(-30px); /* Moves it up */
+
+}
+.aya {
+		display: block; /* Ensures it behaves like a paragraph */
+    max-width: 60%; /* Controls the width to enforce line breaks */
+    text-align: center; /* Keeps the text centered */
+    font-size: 1.3em; /* Adjust text size as needed */
+    line-height: 1.6; /* Improves readability */
+    margin: 10px auto; /* Centers the text */
+    word-wrap: break-word; /* Ensures long words don’t overflow */
+    letter-spacing: 1px;
+    margin-bottom: -10px; /* Reduce bottom margin */
+   /* Moves it up */
+    animation: fadeIn 3s ease-in-out;
+    color: #412649;
+	transform: translateY(-30px); /* Moves it up */
+
+}
+
+        .details {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #412649;
+            margin: 10px 0;
+            animation: slideUp 2s ease-in-out;
+        }
+        .date-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #a586a6;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+            animation: zoomIn 2s ease-in-out;
+			color: white;
+        }
+        .date-box div {
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .countdown {
+            font-size: 1em;
+            background: #a586a6;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+		.location-link {
+           font-size: 1em;
+            background: #a586a6;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .location-link:hover {
+            background-color: #d4c2d3;
+        }
+		.flower {
+    width: 80px; /* Adjust size as needed */
+    display: block;
+    margin: 0 auto 20px; /* Centers the image and adds spacing below */
+    animation: fadeIn 2s ease-in-out;
+}
+
+    </style>
+</head>
+<body>
+       <div class="container">
+	   <img src="https://imgur.com/hwyD3it.png" alt="Flower Decoration" class="flower">
+        <p class="subtitle">
+    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا<br> 
+    لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+</p>
+        <h1 class="decorative">Ali & Ghina</h1>
+        <p class="subtitle">Cordially Invite You To Join The Occasion Of Their Joyous Commitment On</p>
+        
+        <div class="date-box">
+            <div>Tuesday</div>
+            <div>June <strong>10</strong>, 2025</div>
+            <div>At 8 PM</div>
+        </div>
+        
+        <p class="details">Saida</p>
+        <p class="details"><i>Al Mokhtar Restaurant</i></p>
+		<p class="location"><a class="location-link" 
+           href="https://maps.app.goo.gl/JbtH78bb3L4jLQWE9" 
+           target="_blank">
+           View Location on Google Maps
+        </a></p>
+        <div class="countdown" id="countdown"></div>
+		
+		<p class="subtitle"><br>نوماً هنيئاً لأطفالكم</p>
+		<p class="subtitle">(1)عدد الاشخاص</p>
+		<label for="guestName">Please enter your name:</label>
+<input type="text" id="guestName" placeholder="Your Name" required>
+<label for="guestCount">Number of Guests Attending:</label>
+<div id="counter">
+  <button type="button" id="decrement">-</button>
+  <input type="number" id="guestCount" min="1" max="3" value="1" readonly>
+  <button type="button" id="increment">+</button>
+</div>
+
+<style>
+  #counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #counter button {
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  #guestCount {
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+  }
+</style>
+
+<br><br>
+<button id="yesButton">I will attend</button>
+<button id="noButton">I can't attend</button>
+
+    </div>
+
+ <script>
+    function updateCountdown() {
+        const weddingDate = new Date("June 10, 2025 00:00:00").getTime();
+        const now = new Date().getTime();
+        const difference = weddingDate - now;
+        
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        document.getElementById("countdown").innerHTML = `Countdown: ${days} days to go!`;
+    }
+
+    const guestCount = document.getElementById('guestCount');
+    const increment = document.getElementById('increment');
+    const decrement = document.getElementById('decrement');
+    const maxGuestsLabel = document.querySelector('.subtitle:last-of-type').textContent;
+    const maxGuests = parseInt(maxGuestsLabel.match(/\d+/)[0]); // Extract max from Arabic label
+
+    guestCount.max = maxGuests;
+
+    function updateButtons() {
+        const currentValue = parseInt(guestCount.value);
+        increment.disabled = currentValue >= maxGuests;
+        decrement.disabled = currentValue <= 1;
+    }
+
+    increment.addEventListener('click', () => {
+        let currentValue = parseInt(guestCount.value);
+        if (currentValue < maxGuests) {
+            guestCount.value = currentValue + 1;
+            updateButtons();
+        }
+    });
+
+    decrement.addEventListener('click', () => {
+        let currentValue = parseInt(guestCount.value);
+        if (currentValue > 1) {
+            guestCount.value = currentValue - 1;
+            updateButtons();
+        }
+    });
+
+    updateButtons(); // Initialize button states
+</script>
+
+</body>
+</html>
