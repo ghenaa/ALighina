@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 90%;
+            width: 600px;
+            margin: auto;
+            background: url(https://i.imgur.com/D6IU4MO.png);
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            margin-top: 50px;
+            border: 8px solid #a586a6;
+            position: relative;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .decorative {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            color: #412649;
+        }
+
+        .subtitle, .details {
+            font-size: 1.3em;
+            color: #412649;
+        }
+
+        .date-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #a586a6;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .countdown, .location-link {
+            font-size: 1em;
+            background: #a586a6;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        #counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        #guestCount {
+            width: 60px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        #increment, #decrement {
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #a586a6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #increment:hover, #decrement:hover {
+            background-color: #d4c2d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="decorative">Ali & Ghina</h1>
+        <p class="subtitle">Hello Invite You To Join The Occasion Of Their Joyous Commitment On</p>
+        
+        <div class="date-box">
+            <div>Tuesday</div>
+            <div>June <strong>10</strong>, 2025</div>
+            <div>At 8 PM</div>
+        </div>
+        
+        <p class="details">Saida</p>
+        <p class="details"><i>Al Mokhtar Restaurant</i></p>
+        <a class="location-link" href="https://maps.app.goo.gl/JbtH78bb3L4jLQWE9" target="_blank">View Location on Google Maps</a>
+        
+        <div class="countdown" id="countdown"></div>
+        
+        <p class="subtitle">(3) عدد الاشخاص</p>
+        <label for="guestName">Please enter your name:</label>
+        <input type="text" id="guestName" placeholder="Your Name" required>
+
+        <label for="guestCount">Number of Guests Attending:</label>
+        <div id="counter">
+            <button type="button" id="decrement">-</button>
+            <input type="number" id="guestCount" min="1" max="3" value="1">
+            <button type="button" id="increment">+</button>
+        </div>
+
+        <button id="yesButton">I will attend</button>
+        <button id="noButton">I can't attend</button>
+    </div>
+
+    <script>
+        const guestCount = document.getElementById('guestCount');
+        const increment = document.getElementById('increment');
+        const decrement = document.getElementById('decrement');
+        const maxGuests = 3;
+
+        increment.addEventListener('click', () => {
+            let currentValue = parseInt(guestCount.value);
+            if (currentValue < maxGuests) {
+                guestCount.value = currentValue + 1;
+            }
+        });
+
+        decrement.addEventListener('click', () => {
+            let currentValue = parseInt(guestCount.value);
+            if (currentValue > 1) {
+                guestCount.value = currentValue - 1;
+            }
+        });
+
+        function updateCountdown() {
+            const weddingDate = new Date("June 10, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").innerHTML = `Countdown: ${days} days to go!`;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
