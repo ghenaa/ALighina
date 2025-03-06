@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border: 8px solid #a586a6;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #412649;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .number-input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .number-input input[type="number"] {
+            text-align: center;
+            width: 60px;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+
+        .number-input button {
+            padding: 10px 15px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            margin: 10px;
+            background-color: #a586a6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #412649;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="subtitle">Ali & Ghina's Wedding RSVP</h1>
+        <form id="rsvpForm">
+            <div class="form-group">
+                <label for="guestName">Please enter your name:</label>
+                <input type="text" id="guestName" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guestCount">Number of Guests Attending (Max 3):</label>
+                <div class="number-input">
+                    <button type="button" id="decrement">-</button>
+                    <input type="number" id="guestCount" min="1" max="3" value="1">
+                    <button type="button" id="increment">+</button>
+                </div>
+            </div>
+
+            <button type="submit">I will attend</button>
+            <button type="button" id="noButton">I can't attend</button>
+        </form>
+    </div>
+
+    <script>
+        const guestCount = document.getElementById('guestCount');
+        const increment = document.getElementById('increment');
+        const decrement = document.getElementById('decrement');
+        
+        increment.addEventListener('click', () => {
+            let currentValue = parseInt(guestCount.value);
+            if (currentValue < parseInt(guestCount.max)) {
+                guestCount.value = currentValue + 1;
+            }
+        });
+
+        decrement.addEventListener('click', () => {
+            let currentValue = parseInt(guestCount.value);
+            if (currentValue > parseInt(guestCount.min)) {
+                guestCount.value = currentValue - 1;
+            }
+        });
+    </script>
+</body>
+</html>
