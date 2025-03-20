@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
+        
+        body {
+			font-family: 'Playfair Display', serif;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+
+		/* Ensure the container scales properly */
+		.container {
+			max-width: 90%;
+			width: 90%; /* Adjust width dynamically */
+			margin: auto;
+			padding: 20px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+			border-radius: 15px;
+			margin-top: 30px;
+			border: 6px solid #d6cbd3;
+			position: relative;
+			animation: fadeIn 2s ease-in-out;
+			background-size: cover; /* Ensures full image visibility */
+		}
+
+
+
+
+
+        .decorative {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            color: #412649;
+            animation: slideIn 2s ease-in-out;
+        }
+        .subtitle {
+
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    margin-bottom: -10px; /* Reduce bottom margin */
+   /* Moves it up */
+    animation: fadeIn 3s ease-in-out;
+    color: #412649;
+	transform: translateY(-30px); /* Moves it up */
+
+}
+.aya {
+		display: block; /* Ensures it behaves like a paragraph */
+    max-width: 60%; /* Controls the width to enforce line breaks */
+    text-align: center; /* Keeps the text centered */
+    font-size: 1.3em; /* Adjust text size as needed */
+    line-height: 1.6; /* Improves readability */
+    margin: 10px auto; /* Centers the text */
+    word-wrap: break-word; /* Ensures long words don’t overflow */
+    letter-spacing: 1px;
+    margin-bottom: -10px; /* Reduce bottom margin */
+   /* Moves it up */
+    animation: fadeIn 3s ease-in-out;
+    color: #412649;
+	transform: translateY(-30px); /* Moves it up */
+
+}
+
+        .details {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #412649;
+            margin: 10px 0;
+            animation: slideUp 2s ease-in-out;
+        }
+        .date-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #d6cbd3;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+            animation: zoomIn 2s ease-in-out;
+			color: white;
+        }
+        .date-box div {
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .countdown {
+            font-size: 1em;
+            background: #d6cbd3;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+		.location-link {
+           font-size: 1em;
+            background: #d6cbd3;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .location-link:hover {
+            background-color: #d4c2d3;
+        }
+		.flower {
+    width: 80px; /* Adjust size as needed */
+    display: block;
+    margin: 0 auto 20px; /* Centers the image and adds spacing below */
+    animation: fadeIn 2s ease-in-out;
+}
+		.alighinanames {
+		width: 200px; /* Adjust size as needed */
+		height: auto; 
+		display: block;
+	   margin: 0 auto 20px; /* Centers the image and adds spacing below */
+		animation: fadeIn 2s ease-in-out;
+	}
+	/* Reduce text size for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .decorative {
+        font-size: 2em;
+    }
+
+    .subtitle, .aya, .details {
+        font-size: 1.1em;
+    }
+
+    .date-box div {
+        font-size: 0.9em;
+    }
+
+    .countdown {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .location-link {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        border-width: 4px;
+    }
+
+    .decorative {
+        font-size: 1.8em;
+    }
+
+    .subtitle, .aya, .details {
+        font-size: 1em;
+    }
+
+    .date-box div {
+        font-size: 0.8em;
+    }
+
+    .countdown {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+
+    .location-link {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+}
+
+/* Ensure images scale properly */
+.flower,
+.alighinanames {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+/* Ensure RSVP section is responsive */
+#counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #d6cbd3;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.input-container input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+}
+
+.arrow-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.arrow-buttons button {
+    font-size: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button {
+    display: block;
+    width: 80%;
+    max-width: 250px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1em;
+    background: #d6cbd3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: #c5b3c2;
+}
+    </style>
+</head>
+<body>
+       <div class="container">
+	   <img src="https://imgur.com/hwyD3it.png" alt="Flower Decoration" class="flower">
+        <p class="subtitle">
+    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا<br> 
+    لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+</p>
+        <h1 class="decorative">حضرة السّيد الدّكتور يحيى طاهر </h1>
+    <p class="subtitle" style="text-align: center;">
+    تتشرّف <br>
+    عائلة السّيد الأستاذ سامي بركات &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; و &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    عائلة المرحوم الحاج حسن سعد <br>
+    بدعوتكم لحضور زفاف ولديهما
+</p>
+	<img src="alighinanamesnew33.png" alt="Flower Decoration" class="alighinanames">
+            <div class="date-box">
+            <div>٨ مساءً</div>
+            <div>١٠<strong> , حزيران</strong> , ٢٠٢٥</div>
+            <div>الثّلاثاء</div>
+        </div>
+        
+       <img src="sala.png" alt="Flower Decoration" class="alighinanames">
+		<p class="location"><a class="location-link" 
+           href="https://maps.app.goo.gl/JbtH78bb3L4jLQWE9" 
+           target="_blank">
+           Google هنا ننتظركم بحب – شاهد الموقع على خرائط
+        </a></p>
+        <div class="countdown" id="countdown"></div>
+		
+		<p class="subtitle"><br>نوماً هنيئاً لأطفالكم</p>
+		<p class="subtitle">(2)عدد الاشخاص</p>
+<br><br>
+<label for="guestCount" style="font-size: 18px;">:عدد الضيوف الذين سيشاركوننا فرحتنا</label>
+  <div id="counter">
+    <div class="input-container">
+      <input type="number" id="guestCount" min="1" max="3" value="1" readonly>
+      <div class="arrow-buttons">
+        <button type="button" id="increment">&#9650;</button> <!-- Up arrow -->
+        <button type="button" id="decrement">&#9660;</button> <!-- Down arrow -->
+      </div>
+    </div>
+  </div>
+<button id="yesButton">عذراً،لا أستطيع الحضور</button>
+<button id="noButton">!سأحضر للاحتفال معكم</button>
+
+    </div>
+
+  <script>
+        function updateCountdown() {
+            const weddingDate = new Date("June 10, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+            
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").innerHTML = `**العد التنازلي بدأ! فقط ${days} يوم حتى اللقاء المنتظر!**`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+     // Initialize button states
+const guestCount = document.getElementById('guestCount');
+    const increment = document.getElementById('increment');
+    const decrement = document.getElementById('decrement');
+    const maxGuestsLabel = document.querySelector('.subtitle:last-of-type').textContent;
+    const maxGuests = parseInt(maxGuestsLabel.match(/\d+/)[0]); // Extract max from Arabic label
+
+    guestCount.max = maxGuests;
+
+    function updateButtons() {
+        const currentValue = parseInt(guestCount.value);
+        increment.disabled = currentValue >= maxGuests;
+        decrement.disabled = currentValue <= 1;
+    }
+
+    increment.addEventListener('click', () => {
+        let currentValue = parseInt(guestCount.value);
+        if (currentValue < maxGuests) {
+            guestCount.value = currentValue + 1;
+            updateButtons();
+        }
+    });
+
+    decrement.addEventListener('click', () => {
+        let currentValue = parseInt(guestCount.value);
+        if (currentValue > 1) {
+            guestCount.value = currentValue - 1;
+            updateButtons();
+        }
+    });
+
+    updateButtons(); // Initialize button states
+</script>
+</body>
+</html>
