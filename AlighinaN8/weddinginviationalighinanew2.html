@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+	 #aya { 
+    font-size: 1.8em; /* Increased font size */
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #412649;
+}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+            background-color: #f8f3ed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            display: flex;
+           width: 90%;
+			max-width: 1000px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+			min-height: 450px; /* Ensures enough space for the image */
+
+        }
+        .left {
+            width: 50%;
+            text-align: center;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: url(https://i.imgur.com/8N9rFb0.png);
+            background-size: cover;
+            border-right: 3px solid #d6cbd3;
+        }
+        .left h1 {
+            font-size: 30px;
+            margin: 0;
+            color: #4a235a;
+        }
+        .left p {
+            font-size: 18px;
+            color: #4a235a;
+            margin: 5px 0;
+        }
+        .date-box {
+            background: #d6cbd3;
+            color: white;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .location-link {
+            color: #d6cbd3;
+            text-decoration: none;
+            background: #d6cbd3;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .right {
+            width: 50%;
+        }
+       .right img {
+    width: 100%;  /* Ensure it fills the .right div */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Show the full image without cropping */
+    max-height: 100%; /* Prevents it from stretching too much */
+}
+
+		.flower {
+    width: 80px; /* Adjust size as needed */
+    display: block;
+    margin: 0 auto 20px; /* Centers the image and adds spacing below */
+    animation: fadeIn 2s ease-in-out;
+}
+       .countdown {
+            font-size: 1em;
+            background: #d6cbd3;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+		
+	.alighinanames {
+    width: 200px; /* Adjust size as needed */
+	height: auto; 
+    display: block;
+   margin: 0 auto 20px; /* Centers the image and adds spacing below */
+    animation: fadeIn 2s ease-in-out;
+}.date-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #d6cbd3;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+            animation: zoomIn 2s ease-in-out;
+			color: white;
+        }
+        .date-box div {
+            font-size: 1em;
+            font-weight: bold;}
+.location-link {
+           font-size: 1em;
+            background: #d6cbd3;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .location-link:hover {
+            background-color: #d4c2d3;
+        }
+.details {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #412649;
+            margin: 10px 0;
+            animation: slideUp 2s ease-in-out;
+        }	
+.form-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        label {
+            font-size: 16px;
+            color: #4a235a;
+            font-weight: bold;
+        }
+        input {
+            width: 80%;
+            padding: 8px;
+            border: 2px solid #b395c8;
+            border-radius: 5px;
+            margin-top: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        button {
+            background: #a586a6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #c2a3c2;
+        }
+        .counter-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .counter-container button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 18px;
+            line-height: 1;
+        }		
+		
+		.right {
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1.5s ease-in-out;
+    animation: shrinkImage 3s ease-in-out 3s forwards;
+}
+
+@keyframes shrinkImage {
+    0% {
+        width: 100%;
+        height: 100vh; /* Full-screen */
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .card {
+        display: flex;
+        flex-direction: row; /* Keep text on the left, image on the right */
+        align-items: stretch; /* Ensures both sections are of equal height */
+        width: 95%;
+        max-width: 400px;
+        min-height: 300px; /* Ensures enough space */
+    }
+    .left {
+        width: 60%; /* Make sure text takes up 60% of the width */
+        padding: 20px;
+    }
+    .right {
+        width: 40%; /* Make sure image section is 40% */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .right img {
+        width: 100%; /* Ensure image fills its container */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensures proper fit */
+    }
+	  .left h1 {
+        font-size: 24px; /* Smaller heading for mobile */
+    }
+    .left p {
+        font-size: 16px; /* Adjust paragraph text */
+    }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="left">
+		 <img src="https://imgur.com/hwyD3it.png" alt="Flower Decoration" class="flower">
+            <p id="aya">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا<br> 
+            لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+            <h1>حضرة السّيد الدّكتور يحيى طاهر</h1>
+            <p>تتشرف</p>
+            <p>عائلة السيد الأستاذ سامي بركات &nbsp; و &nbsp; عائلة المرحوم الحاج حسن سعد</p>
+            <p>بدعوتكم لحضور زفاف ولديهما</p>
+            <img src="alighinanamesnew33.png" alt="Flower Decoration" class="alighinanames">
+            <div class="date-box">
+            <div>٨ مساءً</div>
+            <div>١٠<strong> , حزيران</strong> , ٢٠٢٥</div>
+            <div>الثّلاثاء</div>
+        </div>
+		<img src="sala.png" alt="Flower Decoration" class="alighinanames">
+            <p class="location"><a class="location-link" 
+           href="https://maps.app.goo.gl/JbtH78bb3L4jLQWE9" 
+           target="_blank">
+          Google هنا ننتظركم بحب – شاهد الموقع على خرائط
+        </a></p>
+            <p id="countdown" class="countdown" ></p>
+            <p class="aya">نوماً هنيئاً لأطفالكم</p>
+            <p>(2) عدد الأشخاص</p>
+           
+<br><br>
+<label for="guestCount" style="font-size: 18px;">:عدد الضيوف الذين سيشاركوننا فرحتنا</label>
+ <div class="form-container">
+                <label for="guestName">:يرجى إدخال اسمك</label>
+                <input type="text" id="guestName" placeholder="اسمك" required>
+                <div class="counter-container">
+                    <button type="button" id="decrement">-</button>
+                    <input type="number" id="guestCount" min="1" max="3" value="1" readonly>
+                    <button type="button" id="increment">+</button>
+                </div>
+                <div class="button-container">
+					<button id="noButton">عذراً،لا أستطيع الحضور</button>
+                    <button id="yesButton">!سأحضر للاحتفال معكم</button>
+                </div>
+            </div>
+</div>
+
+        <div class="right">
+            <img src="https://i.imgur.com/D7h4RPu.jpeg" alt="Wedding Couple">
+        </div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const weddingDate = new Date("June 10, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").innerHTML = `**العد التنازلي بدأ! فقط ${days} يوم حتى اللقاء المنتظر!**`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+		 document.getElementById("increment").addEventListener("click", function() {
+            let guestCount = document.getElementById("guestCount");
+            if (parseInt(guestCount.value) < 3) {
+                guestCount.value = parseInt(guestCount.value) + 1;
+            }
+        });
+        document.getElementById("decrement").addEventListener("click", function() {
+            let guestCount = document.getElementById("guestCount");
+            if (parseInt(guestCount.value) > 1) {
+                guestCount.value = parseInt(guestCount.value) - 1;
+            }
+        });
+    </script>
+</body>
+</html>
