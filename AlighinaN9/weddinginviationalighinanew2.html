@@ -274,10 +274,37 @@
 
 
 
+/* Hide the main content when in portrait mode */
+@media (orientation: portrait) {
+    .container {
+        display: none;
+    }
+    .rotate-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        font-size: 1.5em;
+        color: #412649;
+        background: #f8f4f9;
+        padding: 20px;
+    }
+}
+
+/* Show the content in landscape mode */
+@media (orientation: landscape) {
+    .rotate-message {
+        display: none;
+    }
+}
 
     </style>
 </head>
 <body>
+<div class="rotate-message">
+    📲 الرجاء تدوير هاتفك إلى الوضع الأفقي لعرض الدعوة بشكل أفضل
+</div>
     <div class="card">
         <div class="left">
 		 <img src="https://imgur.com/hwyD3it.png" alt="Flower Decoration" class="flower">
@@ -326,6 +353,17 @@
     </div>
 
     <script>
+	    function checkOrientation() {
+        if (window.innerHeight > window.innerWidth) {
+            document.querySelector('.rotate-message').style.display = 'flex';
+            document.querySelector('.container').style.display = 'none';
+        } else {
+            document.querySelector('.rotate-message').style.display = 'none';
+            document.querySelector('.container').style.display = 'block';
+        }
+    }
+    window.addEventListener('resize', checkOrientation);
+    window.addEventListener('load', checkOrientation);
         function updateCountdown() {
             const weddingDate = new Date("June 10, 2025 00:00:00").getTime();
             const now = new Date().getTime();
