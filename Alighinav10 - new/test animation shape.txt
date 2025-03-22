@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Shape</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            position: relative;
+            animation: move 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+                background-color: blue;
+            }
+            50% {
+                transform: translateX(200px);
+                background-color: green;
+            }
+            100% {
+                transform: translateX(0);
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="circle"></div>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+            background-color: #f8f3ed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 600px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .left, .right {
+            width: 100%;
+        }
+        .left {
+            padding: 20px;
+            background: url(https://i.imgur.com/8N9rFb0.png);
+            background-size: cover;
+            border-bottom: 3px solid #d6cbd3;
+        }
+        .left h1, .left p {
+            color: #4a235a;
+        }
+        .date-box, .location-link, .countdown {
+            background: #d6cbd3;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .right img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+        }
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .counter-container button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+        @media (min-width: 768px) {
+            .card {
+                flex-direction: row;
+                max-width: 1000px;
+            }
+            .left, .right {
+                width: 50%;
+            }
+            .left {
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="left">
+            <h1>حضرة السّيد الدّكتور يحيى طاهر</h1>
+            <p>بدعوتكم لحضور زفاف ولديهما</p>
+            <div class="date-box">١٠ حزيران ٢٠٢٥ - ٨ مساءً</div>
+            <a class="location-link" href="https://maps.app.goo.gl/JbtH78bb3L4jLQWE9" target="_blank">شاهد الموقع على خرائط Google</a>
+            <p id="countdown" class="countdown"></p>
+            <div class="form-container">
+                <p>:عدد الضيوف</p>
+                <div class="counter-container">
+                    <button type="button" id="decrement">-</button>
+                    <input type="number" id="guestCount" min="1" max="3" value="1" readonly>
+                    <button type="button" id="increment">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <img src="https://i.imgur.com/D7h4RPu.jpeg" alt="Wedding Couple">
+        </div>
+    </div>
+    <script>
+        function updateCountdown() {
+            const weddingDate = new Date("June 10, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").innerHTML = `العد التنازلي: ${days} يوم`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        document.getElementById("increment").addEventListener("click", function() {
+            let guestCount = document.getElementById("guestCount");
+            if (parseInt(guestCount.value) < 3) {
+                guestCount.value = parseInt(guestCount.value) + 1;
+            }
+        });
+        document.getElementById("decrement").addEventListener("click", function() {
+            let guestCount = document.getElementById("guestCount");
+            if (parseInt(guestCount.value) > 1) {
+                guestCount.value = parseInt(guestCount.value) - 1;
+            }
+        });
+    </script>
+</body>
+</html>
