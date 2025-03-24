@@ -181,6 +181,54 @@
         height: 100%;
        }
        }
+		 .countdown-container {
+          /*  background: #fdf8f6;*/
+            border-radius: 5px;
+            padding: 2px;
+            width: 120px; /* Small width */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #fdf8f6;
+            position: relative;
+            margin: 30px auto;
+            font-size: 8px;
+        }
+
+        .countdown-title {
+            font-size: 10px;
+            font-weight: bold;
+            color: #412649;
+            margin-bottom: 5px;
+        }
+
+        .countdownnew {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .countdown div {
+         /*   background: #7c5d7f;*/
+            padding: 3px;
+            border-radius: 3px;
+            width: 18px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 7px;
+            color: #412649;
+            margin-top: 3px;
+        }
+
+        .labels div {
+            width: 18px;
+            text-align: center;
+        }
 	</style>
 </head>
 <body>
@@ -211,7 +259,27 @@
  ننتظركم – شاهد الموقع على خرائط Google</a>
 
         </a></p>
-            <p id="countdown" class="countdown" ></p>
+            <div class="countdown-container">
+        <div class="countdown-title">!العد التنازلي ليومنا الكبير</div>
+        <div class="countdownnew">
+            <div>
+                <span id="days">00</span>
+                <div class="label">أيام</div>
+            </div>
+            <div>
+                <span id="hours">00</span>
+                <div class="label">ساعات</div>
+            </div>
+            <div>
+                <span id="minutes">00</span>
+                <div class="label">دقائق</div>
+            </div>
+            <div>
+                <span id="seconds">00</span>
+                <div class="label">ثواني</div>
+            </div>
+        </div>
+    </div>
             <p class="aya">نوماً هنيئاً لأطفالكم</p>
 		</div>
 		 <div class="right">
@@ -221,14 +289,23 @@
 	
 	 <script>
         function updateCountdown() {
-            const weddingDate = new Date("June 10, 2025 00:00:00").getTime();
+            const weddingDate = new Date("2025-06-10T20:00:00").getTime(); // Set the wedding date here
             const now = new Date().getTime();
-            const difference = weddingDate - now;
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            document.getElementById("countdown").innerHTML = `**العد التنازلي بدأ! فقط ${days} يوم حتى اللقاء المنتظر!**`;
+            const timeLeft = weddingDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
         }
-        setInterval(updateCountdown, 1000);
+
         updateCountdown();
+        setInterval(updateCountdown, 1000);
 		</script>
 </body>
 </html>
