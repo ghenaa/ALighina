@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Screen Image</title>
+    <style>
+        /* Remove margins & padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full-screen image container */
+        .image-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #000; /* Optional: Background for contrast */
+        }
+
+        /* Make the image fully visible */
+        .image-container img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* Ensures the full image appears */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img src="agimg2.jpeg" alt="Wedding Image">
+    </div>
+
+</body>
+</html>
