@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Countdown</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: #fffaf0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .countdown-container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 5px;
+            width: 100px; /* Small width */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f4c2c2;
+            position: relative;
+            margin: 50px auto;
+            font-size: 8px;
+        }
+
+        .countdown-title {
+            font-size: 10px;
+            font-weight: bold;
+            color: #d9777f;
+            margin-bottom: 5px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: #ff69b4;
+        }
+
+        .countdown div {
+            background: #fef1f2;
+            padding: 3px;
+            border-radius: 3px;
+            width: 18px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 7px;
+            color: #8b5e83;
+            margin-top: 3px;
+        }
+
+        .labels div {
+            width: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="countdown-container">
+        <div class="countdown-title">Wedding Countdown</div>
+        <div class="countdown">
+            <div id="days">00</div>
+            <div id="hours">00</div>
+            <div id="minutes">00</div>
+            <div id="seconds">00</div>
+        </div>
+        <div class="labels">
+            <div>Days</div>
+            <div>Hrs</div>
+            <div>Min</div>
+            <div>Sec</div>
+        </div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const weddingDate = new Date("2025-06-01T18:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = weddingDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
