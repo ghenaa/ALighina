@@ -372,7 +372,7 @@ function startAnimation() {
     // Listen for animation completion
     left.addEventListener("transitionend", function onTransitionEnd(event) {
         if (event.propertyName === "width") { // Only trigger when width transition ends
-            left.style.backgroundImage = `url(${rightImg.src})`;
+        //    left.style.backgroundImage = `url(${rightImg.src})`;
             rightImg.style.display = "none"; // Hide image
             left.removeEventListener("transitionend", onTransitionEnd); // Remove listener to prevent multiple calls
         }
