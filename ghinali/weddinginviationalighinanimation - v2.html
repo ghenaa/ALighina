@@ -321,6 +321,16 @@
         border-radius: 5px;
         padding: 5px;
     }
+/* Show arrows in number input on mobile */
+#guestCount {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+#guestCount::-webkit-inner-spin-button,
+#guestCount::-webkit-outer-spin-button {
+    -webkit-appearance: inner-spin-button !important; /* Force enable in WebKit browsers */
+    opacity: 1 !important;
+}
 
     .button-container {
         display: flex;
